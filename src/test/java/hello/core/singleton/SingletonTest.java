@@ -1,5 +1,7 @@
 package hello.core.singleton;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import hello.core.AppConfig;
 import hello.core.member.MemberService;
 import org.junit.jupiter.api.DisplayName;
@@ -16,5 +18,7 @@ public class SingletonTest {
 
         System.out.println("memberService1 = " + memberService1);
         System.out.println("memberService2 = " + memberService2);
+
+        assertThat(memberService1).isNotSameAs(memberService2);
     }
 }
